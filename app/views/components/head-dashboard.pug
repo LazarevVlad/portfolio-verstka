@@ -1,0 +1,9 @@
+include menu-list
+
+mixin head-dashboard(data)
+	+b.head-dashboard&attributes(attributes)
+		.global-wrapper
+			+e.wrap
+				+menu-list().head-dashboard__menu
+				+b.BUTTON.hamburger.head-dashboard__hamburger.js-open-menu(aria-label='Меню')
+					+e.SPAN.icon

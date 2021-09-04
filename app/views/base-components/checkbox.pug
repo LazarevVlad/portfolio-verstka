@@ -1,0 +1,18 @@
+mixin checkbox(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'checkbox',
+			'type': 'checkbox',
+			'label': 'Название поля',
+			'state': '', // disabled
+		}, data)
+		var id = Math.random().toString(36).substring(2);
+		var isDisabled = false
+		if (data['state'] == 'disabled') {
+			isDisabled = ''
+			data['class'] += ' disabled'
+		}
+
+	+b&attributes(data.attr())&attributes(attributes)
+		+e.INPUT.input(type=data.type, id=id, name=data['name'], checked=data['checked'], disabled=isDisabled)
+		+e.LABEL.label(for=id) !{data.label}

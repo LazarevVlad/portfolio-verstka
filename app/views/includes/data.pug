@@ -1,0 +1,30 @@
+-
+	function init(inputData, defaultData) {
+		let data = Object.assign({}, {
+			'attr': {},
+			'class': '',
+			'elements': [],
+			'params': function() {},
+		}, defaultData, inputData);
+
+		data['attributes'] = function(object) {
+			object = Object.assign({}, this['attr'], object);
+			if (!object['class']) object['class'] = '';
+			object['class'] = this['block'] + ' ' + this['class'] + ' ' + object['class'];
+			object['class'] = object['class'].replace(/ +/, ' ');
+			return object;
+		}
+		
+		data['elements'].forEach(function(elem){
+			if (!data[elem + '-attr']) {
+				data[elem + '-attr'] = {}
+			}
+		})
+
+		data['elem'] = function(name) {
+			return this['block'] + name;
+		}
+
+		data.params();
+		return data
+	}

@@ -1,0 +1,31 @@
+mixin menu-list(data)
+	-
+		data = init(data, {
+			'list': [
+				{
+					'link': 'Проекты',
+					'href': '#',
+				},
+				{
+					'link': 'Обо мне',
+					'href': '#',
+					'active': '',
+				},
+				{
+					'link': 'Заказчикам',
+					'href': '#',
+					'active': '',
+				},
+				{
+					'link': 'Контакты',
+					'href': '#',
+					'active': '',
+				},
+			],
+		})
+
+	+b.NAV.menu-list&attributes(attributes)
+		+e.UL.list
+			each link in data['list']
+				+e.LI.item
+					+e.A.link(href=link['href'] js-anchor) !{link['link']}

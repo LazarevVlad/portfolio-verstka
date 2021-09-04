@@ -1,0 +1,18 @@
+mixin textarea(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'input',
+			'placeholder': '',
+			'value': '',
+			'state': '', // error, disabled
+		}, data)
+		var isDisabled = false
+		data['class'] += ' ' + 'input_textarea'
+		if (data['state'] == 'disabled') {
+			data['class'] += ' ' + 'disabled'
+			isDisabled = '';
+		} else if (data['state'] == 'error') {
+			data['class'] += ' ' + 'error'
+		}
+
+	textarea&attributes(data.attr())(placeholder=data['placeholder'] value=data['value'] disabled=isDisabled)&attributes(attributes)

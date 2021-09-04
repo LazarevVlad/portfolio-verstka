@@ -1,0 +1,86 @@
+@mixin grid($count: 1, $mgh: 0, $mgv: $mgh) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -#{$mgv/2} -#{$mgh/2};
+  $proportion: 1/#{$count};
+  & > * {
+    width: calc(100%*#{$proportion} - #{$mgh});
+    margin: #{$mgv/2} #{$mgh/2};
+  }
+}
+
+@mixin checkbox-default() {
+  &__input {
+    @include visually-hidden();
+  }
+  &__input:not([disabled]) + &__label {
+    cursor: pointer;
+  }
+  &__label {
+    @include icon-left();
+  }
+  &__label,
+  &__label:before {
+    transition: $transition;
+  }
+}
+
+@mixin visually-hidden() {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  opacity: 0;
+}
+
+@mixin icon-left() {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    // transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@mixin icon-right() {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    // transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content
+  }
+  :-moz-placeholder {
+    @content
+  }
+  ::-moz-placeholder {
+    @content
+  }
+  :-ms-input-placeholder {
+    @content
+  }
+}
+
+@mixin button-default() {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: $transition;
+  cursor: pointer;
+  text-decoration: none;
+}

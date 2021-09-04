@@ -1,0 +1,264 @@
+@mixin head-1-complex() {
+  @include head-1-mobile();
+
+  @include media-min($media-sm) {
+    @include head-1-tablet();
+  }
+
+  @include media-min($media-xl) {
+    @include head-1();
+  }
+}
+
+@mixin head-2-complex() {
+  @include head-2-mobile();
+
+  @include media-min($media-sm) {
+    @include head-2-tablet();
+  }
+
+  @include media-min($media-xl) {
+    @include head-2();
+  }
+}
+
+@mixin head-3-complex() {
+  @include head-2-mobile();
+
+  @include media-min($media-sm) {
+    @include head-3();
+  }
+}
+
+@mixin head-4-complex() {
+  @include head-4-mobile();
+
+  @include media-min($media-sm) {
+    @include head-4-tablet();
+  }
+
+  @include media-min($media-xl) {
+    @include head-4();
+  }
+}
+
+@mixin body-1-complex() {
+  @include body-1-mobile();
+
+  @include media-min($media-sm) {
+    @include body-1-tablet();
+  }
+
+  @include media-min($media-xl) {
+    @include body-1();
+  }
+}
+
+@mixin body-2-complex() {
+  @include body-2-mobile();
+
+  @include media-min($media-xl) {
+    @include body-2();
+  }
+}
+
+@mixin link-1-complex() {
+  @include link-1-mobile();
+
+  @include media-min($media-sm) {
+    @include link-1-tablet();
+  }
+
+  @include media-min($media-xl) {
+    @include link-1();
+  }
+}
+
+@mixin link-2-complex() {
+  @include link-2-mobile();
+
+  @include media-min($media-sm) {
+    @include link-2-tablet();
+  }
+
+  @include media-min($media-xl) {
+    @include link-2();
+  }
+}
+
+@mixin head-1() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 104px;
+}
+
+@mixin head-1-tablet() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 65px;
+}
+
+@mixin head-1-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 40px;
+}
+
+@mixin head-2() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 46px;
+}
+
+@mixin head-2-tablet() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 39px;
+}
+
+@mixin head-2-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+@mixin head-3() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+@mixin head-3-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@mixin head-4() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+@mixin head-4-tablet() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin head-4-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 13px;
+}
+
+@mixin body-1() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 40px;
+}
+
+@mixin body-1-tablet() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin body-1-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin body-2() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 17px;
+}
+
+@mixin body-2-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+
+@mixin link-1-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+@mixin link-1-tablet() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+@mixin link-1() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin link-2-mobile() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+@mixin link-2-tablet() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin link-2() {
+  font-family: $font-default;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 28px;
+}

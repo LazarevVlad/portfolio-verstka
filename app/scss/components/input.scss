@@ -1,0 +1,28 @@
+.input {
+  padding: 5px 0;
+  width: 100%;
+  flex-shrink: 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid $color-black;
+  transition: $transition;
+  @include link-1-complex();
+  color: $color-black;
+  outline: none;
+
+  &:focus {
+    border-bottom: 1px solid $color-grey;
+  }
+
+  &.error {
+  }
+}
+
+.input_textarea {
+  height: 50px;
+  resize: vertical;
+
+  @include media-min($media-md) {
+    height: 65px;
+  }
+}

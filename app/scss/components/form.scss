@@ -1,0 +1,55 @@
+.form {
+  max-width: 359px;
+
+  @include media-min($media-xl) {
+    max-width: 458px;
+  }
+}
+
+.form__head {
+  margin-bottom: 55px;
+}
+
+.form__title {
+  @include head-3-mobile();
+
+  @include media-min($media-sm) {
+    font-size: 25px;
+    line-height: 33px;
+  }
+
+  @include media-min($media-xl) {
+    font-size: 30px;
+    line-height: 39px;
+  }
+}
+
+.form__body {
+  & > * + * {
+    margin-top: 24px;
+
+    @include media-min($media-sm) {
+      margin-top: 33px;
+    }
+
+    @include media-min($media-xl) {
+      margin-top: 44px;
+    }
+  }
+}
+
+.form__item {
+
+}
+
+.form__button-container {
+  margin-top: 24px;
+
+  @include media-min($media-sm) {
+    margin-top: 40px;
+  }
+
+  @include media-min($media-xl) {
+    margin-top: 75px;
+  }
+}

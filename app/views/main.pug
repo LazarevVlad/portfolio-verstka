@@ -1,0 +1,24 @@
+extends templates/main-template
+
+include components/about
+include components/project-list
+
+block title
+	title Главная
+
+block content
+
+	+b.SECTION.block_first
+		.global-wrapper
+			+e.body
+				+about()
+
+
+	+b.SECTION.block_background_grey._padding._project
+		.global-wrapper
+			+e.body
+				+project-list()
+
+
+block extraContent
+	//- include includes/mapscript.js 

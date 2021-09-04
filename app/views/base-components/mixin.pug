@@ -1,0 +1,8 @@
+mixin mixin(data)
+	-
+		data = Object.assign({}, common, {
+			'mixin': '',
+		}, data)
+		var mixin = data['mixin']
+		
+	+#{mixin}(data)&attributes(attributes)

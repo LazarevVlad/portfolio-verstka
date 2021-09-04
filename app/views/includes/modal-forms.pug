@@ -1,0 +1,39 @@
+include ../components/input-field.pug
+
+div(style='display: none;')
+	.modal-1.testimony-modal.page__testimony-modal#testimony-modal
+		button.modal-1__close-btn(aria-label='Закрыть' data-fancybox-close)
+			include ../../img/icons/icon-16-6-1.svg
+		.modal-1__header
+			h2.modal-1__title Введите показания
+		.modal-1__section
+			p.testimony-modal__text Передача показаний необходима для точного расчета суммы задолженности
+			.testimony-modal__address Новосибирск, Нимеровича-Данченко ул., 241/1-60
+			.testimony-modal__account ЛС 512540602
+			.testimony-modal__counter 85678567856785678
+			.testimony-modal__field-wrap
+				+input-field({
+					title: 'Текущие значения',
+					placeholder: '000000000',
+					inputClass: 'input_cl-theme_dark',
+					id: 'testimony-modal-1',
+				}).testimony-modal__input-filed
+				.testimony-modal__field-indicators-list
+					.testimony-modal__field-indicators-item.testimony-modal__field-indicators-item_hidden
+						.testimony-modal__input-preloader
+							.testimony-modal__input-preloader-icon
+								include ../../img/icons/icon-36-2-1.svg
+							.testimony-modal__input-preloader-text Проверяем
+					.testimony-modal__field-indicators-item.testimony-modal__field-indicators-item_hidden
+						.testimony-modal__input-error
+							.testimony-modal__input-error-icon
+								include ../../img/icons/icon-24-6-2.svg
+							.testimony-modal__input-error-text Введено неверно
+					.testimony-modal__field-indicators-item
+						.testimony-modal__price-info
+							.testimony-modal__price-title к оплате
+							.testimony-modal__price-number 42 253 р.
+
+		.modal-1__section
+			button.button-secondary.modal-1__button Передать показания
+			+b.BUTTON.button-primary_pdv_lg.modal-1__button(data-fancybox-close) Ок

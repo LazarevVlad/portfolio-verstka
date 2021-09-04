@@ -1,0 +1,20 @@
+mixin input-interval(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'input-interval',
+			'min': 0,
+			'max': 300000,
+			'from': 0,
+			'to': 300000,
+			'step': 5000,
+		}, data)
+
+	+b&attributes(data.attr())&attributes(attributes)(js-input-interval)
+		+e.__inputs
+			+e.__inputs-left
+				+e.SPAN.__prefix от
+				+e.SPAN.__value-from= data['from']
+			+e.__inputs-right
+				+e.SPAN.__prefix до
+				+e.SPAN.__value-to= data['to']
+		+e.INPUT.__input-init(type="text", data-min=data['min'], data-max=data['max'], data-from=data['from'], data-to=data['to'], data-step=data['step'])

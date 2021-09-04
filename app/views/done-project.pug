@@ -1,0 +1,41 @@
+extends templates/project-template
+
+include components/project-list
+
+block title
+	title Выполненные проекты
+
+block content
+
+	+b.SECTION.block_first
+		.global-wrapper
+			+e.head 
+				+e.title Выполненные проекты
+			+e.body
+				+b.done-project 
+					+e.wrap 
+						+e.UL.list
+							+e.LI.item
+								+e.A.link(href='#') Веб-сервисы
+							+e.LI.item.is-active
+								+e.A.link(href='#') Сайты-визитки
+							+e.LI.item
+								+e.A.link(href='#') Интернет-магазины
+							+e.LI.item
+								+e.A.link(href='#') Корпоративные-сайты
+							+e.LI.item
+								+e.A.link(href='#') Сайты на битрикс
+							+e.LI.item
+								+e.A.link(href='#') Сайты на тильде
+
+
+	+b.SECTION.block_project
+		.global-wrapper
+			+e.body
+				+project-list({
+					'title': '',
+				})
+
+
+block extraContent
+	//- include includes/mapscript.js 

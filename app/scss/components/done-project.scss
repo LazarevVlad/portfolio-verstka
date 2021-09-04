@@ -1,0 +1,52 @@
+.done-project {
+
+}
+
+.done-project__wrap {
+  
+}
+
+.done-project__list {
+  max-width: 555px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: -11px -9px;
+
+  @include media-min($media-xl) {
+    max-width: 693px;
+  }
+}
+
+.done-project__item {
+  display: flex;
+  margin: 11px 9px;
+  padding: 5px 15px;
+  border: 1px solid $color-grey;
+  transition: $transition;
+
+  &:hover {
+    background-color: $color-grey;
+    .done-project__link {
+      color: $color-white;
+    }
+  }
+
+  &.is-active {
+    background-color: $color-grey;
+    .done-project__link {
+      color: $color-white;
+    }
+  }
+}
+
+.done-project__link {
+  @include head-4-mobile();
+  color: $color-grey;
+  text-decoration: none;
+
+  @include media-min($media-sm) {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}

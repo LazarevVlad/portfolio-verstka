@@ -1,0 +1,14 @@
+extends templates/main-template
+
+
+block title
+	title Демонстрация - Компоненты
+
+block content
+	+b.SECTION.block
+		.global-wrapper
+			+e.head
+				+e.title Демонстрация - Компоненты
+			+e.body
+				+b.component-list
+					+e.item

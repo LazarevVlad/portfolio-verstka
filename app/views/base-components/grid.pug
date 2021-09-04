@@ -1,0 +1,15 @@
+include mixin
+
+mixin grid(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'grid',
+			'array': [{}],
+			'common': {},
+		}, data)
+
+	+b&attributes(data.attr())&attributes(attributes)
+		+e.__grid-row
+			each item in data['array']
+				- item = Object.assign({}, data['common'], item)
+				+mixin(item)(class=data['block'] + '__grid-item')

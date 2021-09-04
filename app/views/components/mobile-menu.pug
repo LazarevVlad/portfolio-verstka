@@ -1,0 +1,7 @@
+include ./menu-list
+
+mixin mobile-menu(data)
+	.mobile-menu-wrapper#mobile-menu
+		+b.mobile-menu&attributes(attributes)
+			+e.wrap
+				+menu-list().mobile-menu__menu

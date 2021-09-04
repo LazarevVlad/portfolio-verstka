@@ -1,0 +1,33 @@
+.button {
+  @include button-default();
+  padding: 20px 40px;
+  border-radius: 30px;
+  background-color: $color-black;
+  color: $color-white;
+  min-width: 140px;
+  font-size: 13px !important;
+  @include head-4-mobile();
+  text-transform: uppercase;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.button_fz_15 {
+  @include media-min($media-sm) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+.button_pd_lrg {
+  @include media-min($media-sm) {
+    padding: 20px 40px;
+  }
+}
+.button_br_39 {
+  @include media-min($media-sm) {
+    border-radius: 39px;
+  }
+}

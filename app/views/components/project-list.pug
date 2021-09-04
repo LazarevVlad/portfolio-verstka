@@ -1,0 +1,46 @@
+include project-card 
+
+mixin project-list(data)
+
+	-
+		data = init(data, {
+			'title': 'Последние проекты',
+			'list': [
+				{
+					'img': 'project-img-1.png',
+					'title': 'Интернет-магазин для Республиканского сельскохозяйственного рынка',
+					'subtitle': 'Интернет-магазины',
+					'link': 'Подробнее',
+				},
+				{
+					'class': '_reverse',
+					'img': 'project-img-2.png',
+					'title': 'Сайт аренды коммерческих помещений в г. Абакан',
+					'subtitle': 'Сайты-визитки',
+					'link': 'Подробнее',
+				},
+				{
+					'img': 'project-img-3.png',
+					'title': 'Интернет-магазин “Квадратура”',
+					'subtitle': 'Интернет-магазины',
+					'link': 'Подробнее',
+				},
+				{
+					'class': '_reverse',
+					'img': 'project-img-4.png',
+					'title': 'Сайт изготовления металлоконструкицй в г. Краснодар',
+					'subtitle': 'Сайты-визитки',
+					'link': 'Подробнее',
+				},
+			],
+		})
+
+	+b.project-list&attributes(attributes)
+		if data['title']
+			+e.title !{data['title']}
+		+e.list
+			each item in data['list']
+				+e.item 
+					+project-card(item)
+		+e.button-container 
+			+b.A.button_pd_lrg._fz_15._br_39(href='#') Смотреть все

@@ -1,0 +1,16 @@
+mixin input(data)
+	-
+		data = init(data, {
+			'block': 'input',
+			'type': 'text',
+			'placeholder': false,
+			'value': false,
+			'disabled': false,
+			'error': false,
+		})
+		
+		if (data['error']) {
+			data['class'] += ' error';
+		}
+	
+	+b.INPUT&attributes(data.attributes(attributes))(type=data['type'] placeholder=data['placeholder'] value=data['value'] disabled=data['disabled'])

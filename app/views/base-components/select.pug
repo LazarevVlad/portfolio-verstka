@@ -1,0 +1,32 @@
+mixin select(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'select',
+			'array': ['Вариант 1', 'Вариант 2', 'Вариант 3', 'Вариант 4', 'Вариант 5', 'Вариант 6'],
+			'placeholder': '',
+			'multiple': false,
+			'active': -1,
+			'state': '', // disabled, error
+		}, data)
+		var name = Math.random().toString(36).substring(2);
+		var type = data['multiple'] ? 'checkbox' : 'radio'
+		var isDisabled = false
+		data['class'] += 'js__tabselect'
+		if (data['state'] == 'disabled') {
+			data['class'] += ' ' + 'disabled'
+			isDisabled = '';
+		} else if (data['state'] == 'error') {
+			data['class'] += ' ' + 'error'
+		}
+	
+	+b&attributes(data.attr())&attributes(attributes)
+		+e.BUTTON.__button(type='button' data-dsdd disabled=isDisabled)
+			+e.__button-inner(data-display)= data['placeholder']
+		+e.UL.__list.dsdd-menu.has-scrollbar(data-inputs)
+			each label, index in data['array']
+				-
+					var id = name + index
+					var checked = (data['active'] == index) ? '' : false
+				+e.LI.__item
+					+e.INPUT.__input(type=type, id=id, name=name, checked=checked)
+					+e.LABEL.__label(for=id) !{label}

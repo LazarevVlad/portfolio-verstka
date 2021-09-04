@@ -1,0 +1,44 @@
+.form-field {
+  position: relative;
+
+  &.error &__error-text {
+    color: $color-error;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.form-field__title {
+  // @include body-1-complex();
+  // color: $color-text-1;
+  margin-bottom: 5px;
+  transition: $transition;
+}
+.form-field__error-text {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  @include head-4-mobile();
+  transition: $transition;
+  transform: translateY(100%);
+  // color: $color-error;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form-field__container {
+  position: relative;
+}
+
+.form-field__icon-search {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  // background-image: icon-loupe($color-text-3);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

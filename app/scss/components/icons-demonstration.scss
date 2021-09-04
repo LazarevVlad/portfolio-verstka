@@ -1,0 +1,26 @@
+.icons-demonstration {
+	padding: 50px;
+	background-color: lightgray;
+}
+.icons-demonstration__grid-row {
+	column-count: 4;
+	column-gap: 0;
+	margin: -10px;
+}
+.icons-demonstration__grid-item {
+	break-inside: avoid;
+	margin: 10px;
+	display: flex;
+	align-items: center;
+}
+[class*='icons-demonstration__icon'] {
+	width: 65px;
+	height: 65px;
+	background: no-repeat center;
+}
+.icons-demonstration__title {
+	margin-left: 20px;
+}
+.icons-demonstration__icon-pdf {
+	background-image: icon-pdf();
+}

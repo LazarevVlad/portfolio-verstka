@@ -1,0 +1,34 @@
+doctype html
+include ../bemto/bemto.pug
+include ../includes/data
+include ../components/head-dashboard
+include ../components/mobile-menu
+include ../components/footer
+
+html(lang='ru')
+  head
+    block meta
+      include ../includes/meta
+
+    block links
+      include ../includes/headlinks
+
+    block title
+
+  body
+    .awPageWrapper
+      header.header
+        +head-dashboard()
+        +mobile-menu()
+
+      main.page
+        .page__main 
+          block content
+
+        block extraContent
+
+      +footer()      
+    //- include ../includes/modal-forms
+
+    block bottomlinks
+      include ../includes/footerlinks

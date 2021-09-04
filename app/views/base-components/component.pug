@@ -1,0 +1,9 @@
+include block
+
+mixin component(data)
+	-
+		data = Object.assign({}, {
+			'mixin': 'block',
+		}, data)
+
+	+#{data['mixin']}(data)&attributes(attributes)

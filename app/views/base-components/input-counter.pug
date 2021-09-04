@@ -1,0 +1,17 @@
+mixin input-counter(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'input-counter',
+			'value': 1,
+			'state': '', // disabled
+		}, data)
+		var isDisabled = false
+		if (data['state'] == 'disabled') {
+			data['class'] += ' disabled'
+			isDisabled = ''
+		}
+		
+	+b&attributes(data.attr())&attributes(attributes)(js-input-counter)
+		+e.BUTTON.__minus(js-input-counter-minus disabled=isDisabled) -
+		+e.INPUT.__input(type="number" value=data['value'] js-input-counter-input disabled=isDisabled)
+		+e.BUTTON.__plus(js-input-counter-plus disabled=isDisabled) +

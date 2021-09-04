@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+node_modules/
+dist/
+runtime/
+app/validator-report/
+package-lock.json
+yarn.lock
+ftp_access.json
+

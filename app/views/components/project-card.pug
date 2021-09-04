@@ -1,0 +1,18 @@
+mixin project-card(data)
+	-
+		data = init(data, {
+			'class': '',
+			'img': 'project-img-1.png',
+			'title': 'Интернет-магазин для Республиканского сельскохозяйственного рынка',
+			'subtitle': 'Интернет-магазины',
+			'link': 'Подробнее',
+		})
+
+	+b.project-card&attributes(attributes)(class=data['class'])
+		+e.wrap 
+			+e.img-container 
+				+e.IMG.img(src='img/components/project/' + data['img'])
+			+e.text-container 
+				+e.subtitle  !{data['subtitle']}
+				+e.title !{data['title']}
+				+e.A.link(href='#') !{data['link']}

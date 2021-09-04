@@ -1,0 +1,19 @@
+mixin menu(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'menu',
+			'array': [],
+			'active': -1,
+			'array-extended': [],
+		}, data)
+		data['array'].forEach(function(link, index){
+			data['array-extended'][index] = {
+				'link': link,
+			}
+		})
+
+	+b&attributes(data.attr())&attributes(attributes)
+		+e.UL.__list
+			each item, index in data['array-extended']
+				+e.LI.__item&attributes(item['item-attr'])
+					+e.A.__link(href='#!', class=(data['active'] === index) ? 'active' : false)&attributes(item['link-attr']) !{item['link']}

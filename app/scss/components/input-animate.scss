@@ -1,0 +1,39 @@
+.input-animate {
+  position: relative;
+  width: 100%;
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    @include link-1-complex();
+    transition: $transition;
+    opacity: 0.5;
+  }
+}
+
+.input-animate__highlight {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.input:focus ~ label {
+  top: 0;
+  @include link-1-complex();
+  font-size: 10px !important;
+  line-height: 15px !important;
+}
+
+.input.is-full ~ label{
+  top: 0;
+  @include link-1-complex();
+  font-size: 10px !important;
+  line-height: 15px !important;
+}

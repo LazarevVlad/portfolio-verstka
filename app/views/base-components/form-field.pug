@@ -1,0 +1,31 @@
+include component
+include input
+include password-input
+include textarea
+include input-animate
+
+mixin form-field(data)
+	-
+		data = init(data, {
+			'block': 'form-field',
+			'title': 'Название поля',
+			'error-text': '',
+			'disabled': false,
+			'component': {
+				'mixin': 'input',
+			},
+		})
+
+		var id = Math.random().toString(36).substring(2);
+		
+		if (data['disabled']) {
+			data['class'] += ' disabled';
+			data['field']['disabled'] = data['disabled'];
+		}
+
+	+b&attributes(data.attributes(attributes))(js-form-field)
+		if data['title']
+			+e.__title !{data['title']}
+		+component(data['component'])(class=data.elem('__component'))
+		if data['error-text']
+			+e.__error-text !{data['error-text']}

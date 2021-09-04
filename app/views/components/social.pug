@@ -1,0 +1,11 @@
+mixin social(data)
+	-
+		data = init(data, {
+			'list': ['vk.png', 'inst.png', 'tg.png']
+		})
+
+	+b.social&attributes(attributes)
+		+e.wrap
+			each val in data['list']
+				+e.A.item(href='#')
+					+e.IMG.img(src='img/components/social/' + val)

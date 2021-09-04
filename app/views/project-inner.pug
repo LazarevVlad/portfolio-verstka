@@ -1,0 +1,23 @@
+extends templates/project-template
+
+include components/project-inner
+
+block title
+	title Деталка проекта
+
+block content
+
+	+b.SECTION.block_first
+		.global-wrapper
+			+e.head 
+				+e.title_w_max Интернет-магазин для Республиканского сельскохозяйственного рынка
+
+
+	+b.SECTION.block_project
+		.global-wrapper
+			+e.body
+				+project-inner()
+
+
+block extraContent
+	//- include includes/mapscript.js 

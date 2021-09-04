@@ -1,0 +1,21 @@
+mixin project-inner(data)
+	-
+		data = init(data, {
+			'link': ' HTTPS://RYNOK19.RU',
+			'img': 'project-img-1-big.png',
+			'text': [
+				'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.',
+			],
+		})
+	
+	+b.project-inner&attributes(attributes)
+		+e.wrap 
+			+e.link-container 
+				+b.A.button_pd_lrg._fz_15._br_39(href=data['link'] target='_blank') Перейти на сайт
+			+e.img-container 
+				+e.IMG.img(src='img/components/project/' + data['img'])
+			+e.text-container 
+				+e.title Проблема
+				+e.text 
+					each textItem in data['text']
+						p !{textItem}

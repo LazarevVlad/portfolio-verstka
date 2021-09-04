@@ -1,0 +1,37 @@
+.menu-list {
+
+}
+
+.menu-list__list {
+  
+}
+
+.menu-list__item {
+  display: inline-flex;
+  padding: 9px;
+  transition: $transition;
+  &.is-active {
+    background-color: $color-black;
+
+    .menu-list__link {
+      color: $color-white;
+    }
+  }
+
+  &:hover {
+    background-color: $color-black;
+
+    .menu-list__link {
+      color: $color-white;
+    }
+  }
+}
+
+.menu-list__link {
+  @include body-2-complex();
+  color: $color-grey;
+  transition: $transition;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

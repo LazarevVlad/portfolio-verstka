@@ -1,0 +1,24 @@
+mixin input-animate(data)
+	-
+		data = init(data, {
+			'block': 'input',
+			'type': 'text',
+			'placeholder': false,
+			'value': false,
+			'disabled': false,
+			'error': false,
+			'textarea': false,
+		})
+		
+		if (data['error']) {
+			data['class'] += ' error';
+		}
+	+b.input-animate
+		if data['textarea']
+			+b.TEXTAREA.input_animate._textarea&attributes(data.attributes(attributes))(type=data['type'] value=data['value'] disabled=data['disabled'])
+			+e.SPAN.highlight
+			label !{data['placeholder']}
+		else
+			+b.INPUT.input_animate&attributes(data.attributes(attributes))(type=data['type'] value=data['value'] disabled=data['disabled'])
+			+e.SPAN.highlight
+			label !{data['placeholder']}

@@ -1,0 +1,25 @@
+include checkbox
+
+mixin checkbox-list(data)
+	-
+		data = Object.assign({}, common, {
+			'block': 'checkbox-list',
+			'array': ['2л', '5л', '10л'],
+			'active': 0,
+		}, data)
+		var name = Math.random().toString(36).substring(2);
+
+	+b&attributes(data.attr())&attributes(attributes)
+		+b.UL(class=data['block'])
+			each label, index in data['array']
+				if index == data['active']
+					- var isChecked = ""
+				else
+					- var isChecked = false
+				+checkbox({
+					'block': 'checkbox',
+					'label': label,
+					'type': 'radio',
+					'name': name,
+					'checked': isChecked,
+				}).LI(class=data['block'] + '__item')

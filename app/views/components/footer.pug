@@ -1,0 +1,68 @@
+include ../base-components/form-field
+include social
+
+mixin footer(data)
+	-
+		data = init(data, {
+			'job': [
+				{
+					'position': 'Фрилансер',
+					'date': 'Февраль 2018 - Август 2019',
+				},
+				{
+					'position': 'Младший веб-разработчик в Метеоре',
+					'date': 'Сентябрь 2019 - Август 2020',
+				},
+				{
+					'position': 'Веб-разработчик в MachineHeads',
+					'date': 'Октябрь 2020 - Настоящее время',
+				},
+			],
+		})
+	
+	+b.FOOTER.footer&attributes(attributes)
+		.global-wrapper 
+			+e.wrap
+				if data['job']
+					+e.section_job
+						+e.subtitle Мой опыт работы
+						+e.job-container
+							each item in data['job']
+								+e.job-item
+									+e.position !{item['position']}
+									+e.date !{item['date']}
+				+e.section_form
+					+e.subtitle Мои контакты
+					+b.FORM.form
+						+e.head 
+							+e.title Отправьте форму обраной связи
+						+e.body
+							+e.item
+								+form-field({
+									'title': '',
+									'error-text': 'Поле не заполнено',
+									'class': '',
+									'component': {
+										'mixin': 'input-animate',
+										'placeholder': 'Ваше имя',
+									},
+								})
+							+e.item
+								+form-field({
+									'title': '',
+									'error-text': 'Поле не заполнено',
+									'class': '',
+									'component': {
+										'mixin': 'input-animate',
+										'placeholder': 'Ваш телефон',
+									},
+								})
+						+e.button-container 
+							+b.BUTTOn.button Отправить
+				+e.section_contact
+					+e.UL.contact-list
+						+e.LI.contact-item 
+							+e.A.link(href='mailto:yemashev99@yandex.ru') yemashev99@yandex.ru
+						+e.LI.contact-item 
+							+e.A.link(href='tel:8 (913) 441-14-85') 8 (913) 441-14-85
+					+social().footer__social

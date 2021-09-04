@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="img/favicon/mini-icon@32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="img/favicon/mini-icon@16.png" sizes="16x16">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&amp;subset=cyrillic" rel="stylesheet">
+  <title>Проект</title>
+</head>
+<body>
+  <style>
+    
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #page__head {
+    padding: 30px 30px 40px;
+    border-bottom: 4px solid #7029e3;
+  }
+
+  #page__body {
+    padding: 40px 30px 80px;
+  }
+
+  #menu {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 28px;
+    font-weight: 800;
+    margin-bottom: 50px;
+  }
+
+  a {
+    font-weight: 400;
+    color: #252525;
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  ul {
+    padding-left: 20px;
+	}
+	
+	.page__footer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 30px 30px 40px;
+    border-top: 4px solid #7029e3;
+		border-bottom: 4px solid #7029e3;
+		text-align: center;
+	}
+
+	#linkarchive {
+		display: inline-block;
+		margin-right: 20px;
+		border: 1px solid #7029e3;
+		border-radius: 5px;
+		padding: 10px;
+		text-decoration: none;
+		font-size: 16px;
+  }
+  
+  #changesDate {
+    font-size: 18px; 
+  }
+  
+  </style>
+  <div id="page">
+    <div id="page__head">
+    </div>
+    <div id="page__body">
+      <h1>Проект </h1>
+
+      <ul id="menu">
+        <li class='meniLink'><a href="./html/">Главная</a></li>
+			</ul>
+		</div>
+		<div class="page__footer">
+			<p>Дата измненений <span class="label label-info" id="changesDate"></span></p>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		var list = document.getElementById('menu');
+		var listItem = document.querySelector('.meniLink');
+
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'filelist.json', false);
+		xhr.send();
+		
+		if (xhr.status != 200) {
+			listItem.innerHTML = 'Ошибка получения данных: ' + xhr.status + ': ' + xhr.statusText;
+		} else {
+		  list.removeChild(listItem);
+		  var data = JSON.parse(xhr.responseText),
+		  pagesData = data.pages;
+      pagesName = data.pagesName;
+      pageData = {}
+      valName = []
+		  for (var i = pagesData.length - 1; i >= 0; i--) {
+		  	var curLink = pagesData[i];
+        var linkName = pagesName[i];        
+        pageData[linkName] = curLink;
+        valName.push(linkName);
+      }
+
+      valName.sort();
+      
+      for (let key in valName) {
+        var nameLink = valName[key];
+
+		  	var li = document.createElement('li');
+		  	li.classList.add('list-group-item');
+		  	var link = document.createElement('a');
+		  	// link.setAttribute('target', '_blank');
+		  	link.setAttribute('href', pageData[nameLink]);
+		  	link.innerHTML = valName[key];
+		  	li.appendChild(link);
+		  	list.appendChild(li);
+      }
+      
+      var linkarchive = document.getElementById('linkarchive'),
+      projectName = data.name,
+      changesDate = document.getElementById('changesDate');
+      // linkarchive.setAttribute('href', projectName + '@' + data.lastChange.split('__')[0] + '.zip');
+      changesDate.innerHTML = data.lastChange;
+
+		}
+	</script>
+  
+</body>
+</html>

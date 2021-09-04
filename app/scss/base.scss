@@ -1,0 +1,47 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+
+html, body {
+  @include body-1();
+  min-height: 100%;
+  min-width: $media-xxs;
+  margin: 0;
+  color: #000;
+  background-color: #fff;
+}
+
+
+.awPageWrapper {
+
+}
+
+a {
+  // line-height: 1;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.global-wrapper {
+  width: calc(100% - 30px);
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+

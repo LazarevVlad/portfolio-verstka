@@ -1,0 +1,51 @@
+.project-list {
+
+}
+
+.project-list__title {
+  margin-bottom: 55px;
+  @include head-4-complex();
+  color: $color-grey;
+  text-transform: uppercase;
+
+  @include media-min($media-sm) {
+    margin-bottom: 70px;
+  }
+
+  @include media-min($media-xl) {
+    margin-bottom: 135px;
+  }
+}
+
+.project-list__list {
+  & > * + * {
+    margin-top: 65px;
+
+    @include media-min($media-sm) {
+      margin-top: 100px;
+    }
+
+    @include media-min($media-xl) {
+      margin-top: 180px;
+    }
+  }
+}
+
+.project-list__item {
+
+}
+
+.project-list__button-container {
+  margin-top: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media-min($media-sm) {
+    margin-top: 134px;
+  }
+
+  @include media-min($media-xl) {
+    margin-top: 170px;
+  }
+}

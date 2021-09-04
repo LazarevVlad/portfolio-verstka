@@ -1,0 +1,34 @@
+/* base parts */
+@import 'libs/var-encode';
+@import 'fonts';
+@import 'vars';
+@import 'text-styles';
+@import 'mixins'; 
+@import 'base';
+@import 'atomic';
+@import 'icons';
+
+/* base-components */
+@import 'components/block';
+@import 'components/password-input';
+@import 'components/hamburger';
+@import 'components/mobile-menu';
+@import 'components/button';
+@import 'components/input';
+@import 'components/input-animate';
+@import 'components/form-field';
+@import 'components/form';
+
+/* components */
+
+@import 'components/component-list';
+@import 'components/icons-demonstration';
+@import 'components/head-dashboard';
+@import 'components/menu-list';
+@import 'components/about';
+@import 'components/project-card';
+@import 'components/project-list';
+@import 'components/social';
+@import 'components/footer';
+@import 'components/done-project';
+@import 'components/project-inner';

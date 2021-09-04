@@ -1,0 +1,41 @@
+.head-dashboard {
+
+}
+
+.head-dashboard__wrap {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+
+  @include media-min($media-xl) {
+    padding: 40px 0;
+  }
+}
+
+.head-dashboard__menu {
+  margin-right: 0;
+  margin-left: auto;
+  display: none;
+
+  @include media-min($media-sm) {
+    display: block;
+  }
+
+  .menu-list__list {
+    align-items: center;
+    display: flex;
+
+    & >  * + * {
+      margin-left: 16px;
+    }
+  }
+}
+
+.head-dashboard__hamburger {
+  margin-right: 0;
+  margin-left: auto;
+
+  @include media-min($media-sm) {
+    display: none;
+  }
+}
