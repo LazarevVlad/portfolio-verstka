@@ -1,0 +1,25 @@
+.contact-list {
+  & > * + * {
+    margin-top: 6px;
+  }
+}
+
+.contact-list__item {
+  display: flex;
+}
+
+.contact-list__link {
+  @include link-2-complex();
+  font-weight: 700 !important;
+  color: $color-black;
+  transition: $transition;
+  
+  a {
+    color: $color-black;
+    text-decoration: none;
+  }
+  
+  &:hover {
+    opacity: 0.7;
+  }
+}

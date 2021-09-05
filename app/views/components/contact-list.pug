@@ -1,0 +1,17 @@
+mixin contact-list(data)
+	-
+		data = init(data, {
+			'list': [
+				{
+					'text': '<a href="mailto:yemashev99@yandex.ru">yemashev99@yandex.ru</a>',
+				},
+				{
+					'text': '<a href="tel:89134411485">8 (913) 441-14-85</a>',
+				},
+			],
+		})
+
+	+b.UL.contact-list&attributes(attributes)
+		each item in data['list']
+			+e.LI.item
+				+e.link !{item['text']}

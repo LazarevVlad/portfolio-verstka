@@ -7,9 +7,33 @@
 }
 
 .menu-list__item {
+  position: relative;
   display: inline-flex;
   padding: 9px;
   transition: $transition;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: $color-black;
+    z-index: 1;
+  }
+  
+  &:after {
+    transition: all 0.2s linear;
+  }
+
+  &:before {
+    opacity: 0;
+    width: 100%;
+    transition: all 0.3s linear 0.3s;
+  }
+
   &.is-active {
     background-color: $color-black;
 
@@ -19,10 +43,17 @@
   }
 
   &:hover {
-    background-color: $color-black;
-
     .menu-list__link {
       color: $color-white;
+    }
+
+    &:after {
+      width: 100%;
+    }
+
+    &:before {
+      opacity: 1;
+      height: 100%;
     }
   }
 }
@@ -31,7 +62,9 @@
   @include body-2-complex();
   color: $color-grey;
   transition: $transition;
+  transition-delay: 0.3s;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
+  z-index: 2;
 }

@@ -1,5 +1,6 @@
 include ../base-components/form-field
 include social
+include contact-list
 
 mixin footer(data)
 	-
@@ -60,9 +61,10 @@ mixin footer(data)
 						+e.button-container 
 							+b.BUTTOn.button Отправить
 				+e.section_contact
-					+e.UL.contact-list
-						+e.LI.contact-item 
-							+e.A.link(href='mailto:yemashev99@yandex.ru') yemashev99@yandex.ru
-						+e.LI.contact-item 
-							+e.A.link(href='tel:8 (913) 441-14-85') 8 (913) 441-14-85
+					+contact-list()
+					//- +e.UL.contact-list
+					//- 	+e.LI.contact-item 
+					//- 		+e.A.link(href='mailto:yemashev99@yandex.ru') yemashev99@yandex.ru
+					//- 	+e.LI.contact-item 
+					//- 		+e.A.link(href='tel:8 (913) 441-14-85') 8 (913) 441-14-85
 					+social().footer__social

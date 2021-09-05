@@ -43,6 +43,10 @@
   color: $color-grey;
 }
 
+.about__text {
+  @include body-1-complex();
+}
+
 .about__link-container {
   & > * + * {
     margin-top: 10px;
